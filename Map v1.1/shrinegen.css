@@ -1,0 +1,265 @@
+/* SHRINE ICONS - DO NOT EDIT */
+.shrines-input input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.towers input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.shrine-icons {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: auto;
+  height: 110px;
+  background-image: url(icons/ShrineIcon-incomplete.svg);
+  background-size: 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(130%);
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+  filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+  z-index: 1;
+}
+
+.tower-icons {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: auto;
+  height: 150px;
+  background-image: url(icons/TowerIcon.svg);
+  background-size: 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(130%);
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+  filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+  z-index: 1;
+}
+
+.shrines input:hover + .shrine-icons {
+  transform: scale(160%);
+  z-index: 2;
+}
+
+.shrines input:checked + .shrine-icons {
+  position: absolute;
+  transform: scale(180%);
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+  filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+}
+
+.towers input:hover + .tower-icons {
+  transform: scale(160%);
+}
+
+.towers input:checked + .tower-icons {
+  position: absolute;
+  transform: scale(180%);
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+  filter: drop-shadow(0px 0px 5px rgba(0, 92, 124, 0.9));
+}
+
+/* TITLES - DO NOT EDIT  */
+
+.icon-title {
+    visibility: hidden;
+    position: relative;
+    width: auto;
+    height: auto;
+    color: white;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 6px;
+    top:40%;
+    left: 180%;
+    z-index: 2;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.shrines:hover .icon-title {
+  visibility: visible;
+}
+
+.towers:hover .icon-title {
+  visibility: visible;
+}
+
+
+.complete:hover .icon-title {
+  visibility: hidden;
+}
+
+/* GREAT PLATEAU SHRINE PLACEMENT */ /*check against map*/
+#gp-tower-loc {
+  top: 8330px;
+  left: 6700px;
+}
+
+#oman-au-loc{
+  top: 8100px;
+  left: 6600px;
+}
+
+#ja-baij-loc{
+  top: 8690px;
+  left: 6895px;
+}
+
+#owa-daim-loc{
+  top: 9105px;
+  left: 6280px;
+}
+
+#keh-namut-loc{
+  top: 8695px;
+  left: 5645px;
+}
+
+/* RIDGELAND SHRINE PLACEMENT */
+#ridgeland-tower-loc {
+  top: 5220px;
+  left: 5220px;
+}
+
+#toh-yahsa-loc{
+  top: 5070px;
+  left: 4607px;
+}
+
+#zalta-wa-loc{
+  top: 5455px;
+  left: 5660px;
+}
+
+#maag-norah-loc {
+  top: 4370px;
+  left: 5000px;
+}
+
+#sheem-dagoze-loc {
+  top: 6320px;
+  left: 5050px;
+}
+
+#shae-loya-loc{
+  top: 5655px;
+  left: 3780px;
+}
+
+#mijah-rokee-loc{
+  top: 6480px;
+  left: 4000px;
+}
+
+#mogg-latan-loc{
+  top: 6775px;
+  left: 4565px;
+}
+
+/* CENTRAL SHRINE PLACEMENT */
+#central-tower-loc {
+  top: 6750px;
+  left: 6440px;
+}
+
+#dah-kaso-loc {
+  top: 8330px;
+  left: 5325px;
+}
+
+#rota-ooh-loc {
+  top: 7850px;
+  left: 5480px;
+}
+
+#kaam-yatak-loc {
+  top: 7110px;
+  left: 6220px;
+}
+
+#katah-chuki-loc {
+  top: 5770px;
+  left: 6645px;
+}
+
+#noya-neha-loc {
+  top: 5410px;
+  left: 6245px;
+}
+
+#saas-kosah-loc {
+  top: 4750px;
+  left: 7245px;
+}
+
+#namika-ozz-loc {
+  top: 5175px;
+  left: 8385px;
+}
+
+#wahgo-katta-loc {
+  top: 7460px;
+  left: 7870px;
+}
+
+/* DUELING PEAKS PLACEMENT */
+
+#dp-tower-loc {
+  top: 8330px;
+  left: 8675px;
+}
+
+#bosh-kala-loc {
+  top: 8260px;
+  left: 7555px;
+}
+
+#hila-rao-loc /*check against map*/ {
+  top: 7230px;
+  left: 8520px;
+}
+
+#shee-venath-loc {
+  top: 8505px;
+  left: 9000px;
+}
+
+#shee-vaneer-loc {
+  top: 8617px;
+  left: 9030px;
+}
+
+#ree-dahee-loc {
+  top: 8495px;
+  left: 9040px;
+}
+
+#ha-dahamar-loc {
+  top: 8595px;
+  left: 9525px;
+}
+
+#taloh-naeg-loc {
+  top: 7305px;
+  left: 9745px;
+}
+
+#lakna-rokee-loc {
+  top: 7403px;
+  left: 9993px;
+}
+
+#toto-sah-loc {
+  top: 9280px;
+  left: 9750px;
+}

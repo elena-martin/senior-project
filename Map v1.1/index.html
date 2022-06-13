@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BOTW Interactive Map v1.1</title>
+        <meta name="description" content="An Interactive Map and Checklist for The Legend of Zelda: Breath of the Wild">
+        <meta name="og:image" content="https://www.public.asu.edu/~ejmart13/Map/social-image.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="site-functions.js"></script>
+        <script type="text/javascript" src="regions.js"></script>
+        <script type="text/javascript" src="jquery.scrollLock.simple.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="mapstyles.css">
+        <link rel="stylesheet" href="shrinegen.css">
+    </head>
+    <body id="site-body">
+        <!--MAP & OBJECTIVE GENERATION-->
+        <div id="map">
+            <div id="map-ol">
+                <!--GREAT PLATEAU-->
+                <label class="towers">
+                    <input type="checkbox" class="gp-tower">
+                    <span id="gp-tower-loc" class="tower-icons">
+                        <div class="icon-title">
+                           Great Plateau Tower
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="oman-au">
+                    <span id="oman-au-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Oman Au
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="ja-baij">
+                    <span id="ja-baij-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Ja Baij
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="owa-daim">
+                    <span id="owa-daim-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Owa Daim
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="keh-namut">
+                    <span id="keh-namut-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Keh Namut
+                        </div>
+                    </span>
+                </label>
+
+                <!--DUELING PEAKS REGION-->
+                <label class="towers">
+                    <input type="checkbox" class="dp-tower">
+                    <span id="dp-tower-loc" class="tower-icons">
+                        <div class="icon-title">
+                           Dueling Peaks Tower
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="bosh-kala">
+                    <span id="bosh-kala-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Bosh Kala
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="hila-rao">
+                    <span id="hila-rao-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Hila Rao
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="shee-venath">
+                    <span id="shee-venath-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Shee Venath
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="shee-vaneer">
+                    <span id="shee-vaneer-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Shee Vaneer
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="ree-dahee">
+                    <span id="ree-dahee-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Ree Dahee
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="ha-dahamar">
+                    <span id="ha-dahamar-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Ha Dahamar
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="taloh-naeg">
+                    <span id="taloh-naeg-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Ta'Loh Naeg
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="lakna-rokee">
+                    <span id="lakna-rokee-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Lakna Rokee
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="toto-sah">
+                    <span id="toto-sah-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Toto Sah
+                        </div>
+                    </span>
+                </label>
+
+                <!--RIDGELAND-->
+                <label class="towers">
+                    <input type="checkbox" class="ridgeland-tower">
+                    <span id="ridgeland-tower-loc" class="tower-icons">
+                        <div class="icon-title">
+                           Ridgeland Tower
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="toh-yahsa">
+                    <span id="toh-yahsa-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Toh Yahsa
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="zalta-wa">
+                    <span id="zalta-wa-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Zalta Wa
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="maag-norah">
+                    <span id="maag-norah-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Maag No'rah
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="sheem-dagoze">
+                    <span id="sheem-dagoze-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Sheem Dagoze
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="shae-loya">
+                    <span id="shae-loya-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Shae Loya
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="mijah-rokee">
+                    <span id="mijah-rokee-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Mijah Rokee
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="mogg-latan">
+                    <span id="mogg-latan-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Mogg Latan
+                        </div>
+                    </span>
+                </label>
+
+                <!--CENTRAL REGION-->
+                <label class="towers">
+                    <input type="checkbox" class="central-tower">
+                    <span id="central-tower-loc" class="tower-icons">
+                        <div class="icon-title">
+                           Central Tower
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="dah-kaso">
+                    <span id="dah-kaso-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Dah Kaso
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="rota-ooh">
+                    <span id="rota-ooh-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Rota Ooh
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="kaam-yatak">
+                    <span id="kaam-yatak-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Kaam Ya'tak
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="katah-chuki">
+                    <span id="katah-chuki-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Katah Chuki
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="noya-neha">
+                    <span id="noya-neha-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Noya Neha
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="saas-kosah">
+                    <span id="saas-kosah-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Saas Ko'sah
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="namika-ozz">
+                    <span id="namika-ozz-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Namika Ozz
+                        </div>
+                    </span>
+                </label>
+                <label class="shrines">
+                    <input type="checkbox" class="wahgo-katta">
+                    <span id="wahgo-katta-loc" class="shrine-icons">
+                        <div class="icon-title">
+                           Wahgo Katta
+                        </div>
+                    </span>
+                </label>
+            </div>
+            <!--MAP BG GENERATION-->
+            <table id="grid" cellspacing="0" cellpadding="0">
+                <tr class="mapslices">
+                    <td id="m1"></td>
+                    <td id="m2"></td>
+                    <td id="m3"></td>
+                    <td id="m4"></td>
+                    <td id="m5"></td>
+                </tr>
+                <tr class="mapslices">
+                    <td id="m6"></td>
+                    <td id="m7"></td>
+                    <td id="m8"></td>
+                    <td id="m9"></td>
+                    <td id="m10"></td>
+                </tr>
+                <tr class="mapslices">
+                    <td id="m11"></td>
+                    <td id="m12"></td>
+                    <td id="m13"></td>
+                    <td id="m14"></td>
+                    <td id="m15"></td>
+                </tr>
+                <tr class="mapslices">
+                    <td id="m16"></td>
+                    <td id="m17"></td>
+                    <td id="m18"></td>
+                    <td id="m19"></td>
+                    <td id="m20"></td>
+                </tr>
+                <tr class="mapslices">
+                    <td id="m21"></td>
+                    <td id="m22"></td>
+                    <td id="m23"></td>
+                    <td id="m24"></td>
+                    <td id="m25"></td>
+                </tr>
+                
+            </table>
+        </div>
+
+        <!--CONTENT & HEADER-->
+        <div id="content">
+            <header>
+                <div id="logo"></div>
+                <nav>
+                    <li id="about">About</li>
+                    <li id="updates">Update Log</li>
+                </nav>
+            </header>
+            
+            <!--Map Controls-->
+            <div id="map-controls">
+                <p>Map Zoom:</p>
+                <span id='showValue'></span><br>
+                <button id="zoom-in" class="zoom-button"></button>
+                <button id="zoom-out" class="zoom-button"></button>
+            </div>
+
+            <!--SIDEBAR/CHECKLIST-->
+            <label class="menu">
+                <input type="checkbox" id="menu">
+                <span id="open-sidebar"></span>
+                <section id="sidebar">
+                    <h2>GREAT PLATEAU</h2>
+                    <ul>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="gp-tower-cl">
+                                <h3>Great Plateau Tower</h3>
+                                <p>Unlock the Great Plateau Region</p>
+                            </label>
+                            <img src="icons/TowerIcon.svg" class="checklist-icons" id="gp-tower-img" style="margin-top: -13%;">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="oman-au-cl">
+                                <h3>Oman Au Shrine</h3>
+                                <p>Magnesis Trial</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="oman-au-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="ja-baij-cl">
+                                <h3>Ja Baij Shrine</h3>
+                                <p>Bomb Trial</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="ja-baij-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="owa-daim-cl">
+                                <h3>Owa Daim Shrine</h3>
+                                <p>Stasis Trial</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="owa-daim-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="keh-namut-cl">
+                                <h3>Keh Namut Shrine</h3>
+                                <p>Cryonis Trial</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="keh-namut-img">
+                        </li>
+                    </ul>
+
+                    <h2>DUELING PEAKS</h2>
+                    <ul>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="dp-tower-cl">
+                                <h3>Dueling Peaks Tower</h3>
+                                <p>Unlock the Dueling Peaks Region</p>
+                            </label>
+                            <img src="icons/TowerIcon.svg" class="checklist-icons" id="dp-tower-img" style="margin-top: -13%;">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="bosh-kala-cl">
+                                <h3>Bosh Kala Shrine</h3>
+                                <p>The Wind Guides You</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="bosh-kala-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="hila-rao-cl">
+                                <h3>Hila Rao Shrine</h3>
+                                <p>Drifting</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="hila-rao-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="shee-venath-cl">
+                                <h3>Shee Venath Shrine</h3>
+                                <p>Twin Memories</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="shee-venath-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="shee-vaneer-cl">
+                                <h3>Shee Vaneer Shrine</h3>
+                                <p>Twin Memories</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="shee-vaneer-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="ree-dahee-cl">
+                                <h3>Ree Dahee Shrine</h3>
+                                <p>Timing is Critical</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="ree-dahee-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="ha-dahamar-cl">
+                                <h3>Ha Dahamar Shrine</h3>
+                                <p>The Water Guides</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="ha-dahamar-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="taloh-naeg-cl">
+                                <h3>Ta'Loh Naeg Shrine</h3>
+                                <p>Ta'Loh Naeg's Teaching</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="taloh-naeg-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="lakna-rokee-cl">
+                                <h3>Lakna Rokee Shrine</h3>
+                                <p>Lakna Rokee's Blessing</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="lakna-rokee-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="toto-sah-cl">
+                                <h3>Toto Sah Shrine</h3>
+                                <p>Toto Sah Apparatus</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="toto-sah-img">
+                        </li><br>
+                    </ul>
+
+                    <h2>RIDGELAND</h2>
+                    <ul>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="ridgeland-tower-cl">
+                                <h3>Ridgeland Tower</h3>
+                                <p>Unlock the Ridgeland Region</p>
+                            </label>
+                            <img src="icons/TowerIcon.svg" class="checklist-icons" id="ridgeland-tower-img" style="margin-top: -13%;">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="toh-yahsa-cl">
+                                <h3>Toh Yahsa Shrine</h3>
+                                <p>Buried Secrets</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="toh-yahsa-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="zalta-wa-cl">
+                                <h3>Zalta Wa Shrine</h3>
+                                <p>Two Orbs to Guide You</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="zalta-wa-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="maag-norah-cl">
+                                <h3>Maag No'rah Shrine</h3>
+                                <p>Maag No'rah's Blassing</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="maag-norah-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="sheem-dagoze-cl">
+                                <h3>Sheem Dagoze Shrine</h3>
+                                <p>Moving in Parallel</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="sheem-dagoze-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="shae-loya-cl">
+                                <h3>Shae Loya Shrine</h3>
+                                <p>Aim for the Moment</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="shae-loya-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="mijah-rokee-cl">
+                                <h3>Mijah Rokee Shrine</h3>
+                                <p>A Modest Test of Strength</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="mijah-rokee-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="mogg-latan-cl">
+                                <h3>Mogg Latan Shrine</h3>
+                                <p>Synced Swing</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="mogg-latan-img">
+                        </li><br>
+                    </ul>
+
+                    <h2>CENTRAL REGION</h2>
+                    <ul>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="central-tower-cl">
+                                <h3>Central Tower</h3>
+                                <p>Unlock the Central Region</p>
+                            </label>
+                            <img src="icons/TowerIcon.svg" class="checklist-icons" id="central-tower-img" style="margin-top: -13%;">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="dah-kaso-cl">
+                                <h3>Dah Kaso Shrine</h3>
+                                <p>A Minor Test of Strength</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="dah-kaso-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="rota-ooh-cl">
+                                <h3>Rota Ooh Shrine</h3>
+                                <p>Passing of the Gates</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="rota-ooh-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="kaam-yatak-cl">
+                                <h3>Kaam Ya'tak Shrine</h3>
+                                <p>Trial of Power</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="kaam-yatak-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="katah-chuki-cl">
+                                <h3>Katah Chuki Shrine</h3>
+                                <p>A Minor Test of Strength</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="katah-chuki-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="noya-neha-cl">
+                                <h3>Noya Neha Shrine</h3>
+                                <p>A Minor Test of Strength</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="noya-neha-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="saas-kosah-cl">
+                                <h3>Saas Ko'sah Shrine</h3>
+                                <p>A Major Test of Strength</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="saas-kosah-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="namika-ozz-cl">
+                                <h3>Namika Ozz Shrine</h3>
+                                <p>A Modest Test of Strength</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="namika-ozz-img">
+                        </li><br>
+                        <li class="checklist-item">
+                            <label class="incomplete">
+                                <input type="button" id="wahgo-katta-cl">
+                                <h3>Wahgo Katta Shrine</h3>
+                                <p>Metal Connections</p>
+                            </label>
+                            <img src="icons/ShrineIcon-incomplete.svg" class="checklist-icons" id="wahgo-katta-img">
+                        </li><br>
+                    </ul>
+                </section>
+            </label>
+
+            <!--------- TUTORIALS & PAGES --------->
+            <div id="welcome" class="pages">
+                <input type="button" class="close-tut">
+                <iframe src="welcome.html" class="nav-page-frame"></iframe>
+            </div>
+            <div id="update-log" class="pages">
+                <input type="button" class="close-tut">
+                <iframe src="update-log.html" class="nav-page-frame"></iframe>
+            </div>
+
+            <!-- GREAT PLATEAU -->
+            <div id="gp-tower-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/gp-tower.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="gp-tower-completed">
+                </section>
+            </div>
+
+            <div id="oman-au-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/oman-au.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="oman-au-completed">
+                </section>
+            </div>
+            
+            <div id="ja-baij-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/ja-baij.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="ja-baij-completed">
+                </section>
+            </div>
+
+            <div id="owa-daim-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/owa-daim.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="owa-daim-completed">
+                </section>
+            </div>
+
+            <div id="keh-namut-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/keh-namut.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="keh-namut-completed">
+                </section>
+            </div>
+
+            <!-- RIDGELAND -->
+            <div id="ridgeland-tower-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/ridgeland-tower.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="ridgeland-tower-completed">
+                </section>
+            </div>
+
+            <div id="toh-yahsa-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/toh-yahsa.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="toh-yahsa-completed">
+                </section>
+            </div>
+
+            <div id="zalta-wa-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/zalta-wa.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="zalta-wa-completed">
+                </section>
+            </div>
+
+            <div id="maag-norah-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/maag-norah.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="maag-norah-completed">
+                </section>
+            </div>
+
+            <div id="sheem-dagoze-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/sheem-dagoze.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="sheem-dagoze-completed">
+                </section>
+            </div>
+
+            <div id="shae-loya-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/shae-loya.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="shae-loya-completed">
+                </section>
+            </div>
+
+            <div id="mijah-rokee-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/mijah-rokee.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="mijah-rokee-completed">
+                </section>
+            </div>
+
+            <div id="mogg-latan-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/mogg-latan.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="mogg-latan-completed">
+                </section>
+            </div>
+
+            <!-- CENTRAL REGION -->
+            <div id="central-tower-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/central-tower.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="central-tower-completed">
+                </section>
+            </div>
+
+            <div id="dah-kaso-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/dah-kaso.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="dah-kaso-completed">
+                </section>
+            </div>
+
+            <div id="rota-ooh-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/rota-ooh.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="rota-ooh-completed">
+                </section>
+            </div>
+
+            <div id="kaam-yatak-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/kaam-yatak.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="kaam-yatak-completed">
+                </section>
+            </div>
+
+            <div id="katah-chuki-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/katah-chuki.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="katah-chuki-completed">
+                </section>
+            </div>
+
+            <div id="noya-neha-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/noya-neha.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="noya-neha-completed">
+                </section>
+            </div>
+
+            <div id="saas-kosah-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/saas-kosah.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="saas-kosah-completed">
+                </section>
+            </div>
+
+            <div id="namika-ozz-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/namika-ozz.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="namika-ozz-completed">
+                </section>
+            </div>
+
+            <div id="wahgo-katta-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/wahgo-katta.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="wahgo-katta-completed">
+                </section>
+            </div>
+
+            <!-- DUELING PEAKS -->
+            <div id="dp-tower-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/dp-tower.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="dp-tower-completed">
+                </section>
+            </div>
+
+            <div id="bosh-kala-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/bosh-kala.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="bosh-kala-completed">
+                </section>
+            </div>
+
+            <div id="hila-rao-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/hila-rao.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="hila-rao-completed">
+                </section>
+            </div>
+
+            <div id="shee-venath-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/twin-memories.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="shee-venath-completed">
+                </section>
+            </div>
+
+            <div id="shee-vaneer-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/twin-memories.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="shee-vaneer-completed">
+                </section>
+            </div>
+
+            <div id="ree-dahee-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/ree-dahee.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="ree-dahee-completed">
+                </section>
+            </div>
+
+            <div id="ha-dahamar-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/ha-dahamar.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="ha-dahamar-completed">
+                </section>
+            </div>
+
+            <div id="taloh-naeg-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/taloh-naeg.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="taloh-naeg-completed">
+                </section>
+            </div>
+
+            <div id="lakna-rokee-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/lakna-rokee.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="lakna-rokee-completed">
+                </section>
+            </div>
+
+            <div id="toto-sah-tut" class="tutorials">
+                <input type="button" class="close-tut">
+                <iframe src="tutorials/toto-sah.html" class="tutorial-frame"></iframe>
+                <section class="completed">
+                    <p>Mark As Complete:</p>
+                    <input type="checkbox" class="toto-sah-completed">
+                </section>
+            </div>
+        </div>
+    </body>
+
+    <!--Drag to Scroll Script-->
+    <script>
+        var mydiv = document.getElementById("map");
+        if (mydiv.addEventListener) {
+            // IE9, Chrome, Safari, Opera
+            mydiv.addEventListener("mousewheel", MouseWheelHandler, false);
+            // Firefox
+            mydiv.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+        }
+        // IE 6/7/8
+        else 
+            mydiv.attachEvent("onmousewheel", MouseWheelHandler);
+
+
+        function MouseWheelHandler(e) {
+
+            // cross-browser wheel delta
+            var e = window.event || e; // old IE support
+            var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+
+            if(delta==1)         // if mouse scrolls up
+            {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+            if(delta==-1)        // if mouse scrolls down, we disable scrolling.
+            {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+            return false;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const ele = document.getElementById('map');
+            ele.style.cursor = 'grab';
+        
+            let pos = { top: 0, left: 0, x: 0, y: 0 };
+        
+            const mouseDownHandler = function(e) {
+                ele.style.cursor = 'grabbing';
+                ele.style.userSelect = 'none';
+        
+                pos = {
+                    left: ele.scrollLeft,
+                    top: ele.scrollTop,
+                    // Get the current mouse position
+                    x: e.clientX,
+                    y: e.clientY,
+                };
+        
+                document.addEventListener('mousemove', mouseMoveHandler);
+                document.addEventListener('mouseup', mouseUpHandler);
+            };
+        
+            const mouseMoveHandler = function(e) {
+                // How far the mouse has been moved
+                const dx = e.clientX - pos.x;
+                const dy = e.clientY - pos.y;
+        
+                // Scroll the element
+                ele.scrollTop = pos.top - dy;
+                ele.scrollLeft = pos.left - dx;
+            };
+        
+            const mouseUpHandler = function() {
+                ele.style.cursor = 'grab';
+                ele.style.removeProperty('user-select');
+        
+                document.removeEventListener('mousemove', mouseMoveHandler);
+                document.removeEventListener('mouseup', mouseUpHandler);
+            };
+        
+            // Attach the handler
+            ele.addEventListener('mousedown', mouseDownHandler);
+        });
+    </script>
+
+</html>
